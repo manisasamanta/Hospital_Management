@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "3b55a4ed-1bdb-4b79-a7a4-ccc3c1f9ccd4",
+		"name": "hospital_management_nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35342901"
+	},
+	"item": [
+		{
+			"name": "user/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM2ZWM2YzcxNjlhOTg2MjhkMjM1YWEiLCJyb2xlIjoiU3VwZXIgQWRtaW4iLCJpYXQiOjE3MjQzMTYzODIsImV4cCI6MTcyNjkwODM4Mn0.KQBaz5vNVxJYf09qsO0K_uVSa4k0dPXgnIn7FZ9-HlY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\":\"ms1838017@gmail.com\",\r\n  \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2600/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "merchant/loginmerchant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\":\"mondalsheshadri9330@gmail.com\",\r\n  \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2600/merchant/loginmerchant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"merchant",
+						"loginmerchant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin/login_admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\":\"manisasamanta3@gmail.com\",\r\n  \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2600/admin/login_admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"admin",
+						"login_admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "merchant/api/createService",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWY1MmVhMTlkZTNmZDg3NGE4YjMxMSIsInJvbGUiOiJtZXJjaGFudCIsInVzZXJuYW1lIjoiUmFodWwgUm95IiwiaWF0IjoxNzI3MjU1Mzc2LCJleHAiOjE3Mjk4NDczNzZ9.g-5m3WFZmmmBRXNaS6FDJXpVnrzUyiOBZZrNQ3tzCMY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "heading",
+							"value": "Pulmology",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Saepe nulla praesentium eaque omnis perferendis a doloremque.",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Pulmology",
+							"type": "text"
+						},
+						{
+							"key": "heading2",
+							"value": "Medecine and Health",
+							"type": "text"
+						},
+						{
+							"key": "description2",
+							"value": "Age forming covered you entered the examine. Blessing scarcely confined her contempt wondered shy. Dashwoods contented sportsmen at up no convinced cordially affection.",
+							"type": "text"
+						},
+						{
+							"key": "description3",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum recusandae dolor autem laudantium, quaerat vel dignissimos. Magnam sint suscipit omnis eaque unde eos aliquam distinctio, quisquam iste, itaque possimus . Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet alias modi eaque, ratione recusandae cupiditate dolorum repellendus iure eius rerum hic minus ipsa at, corporis nesciunt tempore vero voluptas. Tempore.",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Hp/Downloads/de5.avif"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2600/merchant/api/createService",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"merchant",
+						"api",
+						"createService"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin/api/approve-service/66f3d8ce907c50fecbd35f01",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWMxNGRkODM0ZjMwMGJhODNjYjdlMiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiTWFuaXNoYSIsImlhdCI6MTcyNzI1NzU5NSwiZXhwIjoxNzI5ODQ5NTk1fQ.2Z4Mi0GAHGfgxklB1a3CNCg-oZUv0XHXgke0U0WWNJs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2600/admin/api/approve-service/66f3d8ce907c50fecbd35f01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"admin",
+						"api",
+						"approve-service",
+						"66f3d8ce907c50fecbd35f01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin/api/accepted_servicepage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWMxNGRkODM0ZjMwMGJhODNjYjdlMiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiTWFuaXNoYSIsImlhdCI6MTcyNzI1NzU5NSwiZXhwIjoxNzI5ODQ5NTk1fQ.2Z4Mi0GAHGfgxklB1a3CNCg-oZUv0XHXgke0U0WWNJs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2600/admin/api/accepted_servicepage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"admin",
+						"api",
+						"accepted_servicepage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/api/createBooking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWJiNDViN2NlZWFjNmVjZmE4MDYxNSIsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJQdWphIFJveSIsImVtYWlsIjoibXMxODM4MDE3QGdtYWlsLmNvbSIsImlhdCI6MTcyNzI1ODM3MywiZXhwIjoxNzI5ODUwMzczfQ.mKbmfCZ8k5cqs9xdBe5_wzCMtXWqcTsJhSZX7tOQJQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\":\"Shyambazar\",\r\n    \"service_date\":\"2024-10-2\",\r\n    \"time\":\"11:00 am\",\r\n    \"name\":\"Sudip Roy\",\r\n    \"service\":\"66f3d8ce907c50fecbd35f01\",\r\n    \"phone\":\"1234567890\",\r\n    \"message\":\"urgent\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2600/user/api/createBooking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"user",
+						"api",
+						"createBooking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin/api/bookingpage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWMxNGRkODM0ZjMwMGJhODNjYjdlMiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiTWFuaXNoYSIsImlhdCI6MTcyNzI1NzU5NSwiZXhwIjoxNzI5ODQ5NTk1fQ.2Z4Mi0GAHGfgxklB1a3CNCg-oZUv0XHXgke0U0WWNJs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2600/admin/api/bookingpage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"admin",
+						"api",
+						"bookingpage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin/api/booking/status/66f3e0ac7b87b26247162f69",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWMxNGRkODM0ZjMwMGJhODNjYjdlMiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiTWFuaXNoYSIsImlhdCI6MTcyNzI1NzU5NSwiZXhwIjoxNzI5ODQ5NTk1fQ.2Z4Mi0GAHGfgxklB1a3CNCg-oZUv0XHXgke0U0WWNJs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2600/admin/api/booking/status/66f3e0ac7b87b26247162f69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"admin",
+						"api",
+						"booking",
+						"status",
+						"66f3e0ac7b87b26247162f69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin/api/assign_booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWMxNGRkODM0ZjMwMGJhODNjYjdlMiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiTWFuaXNoYSIsImlhdCI6MTcyNzI1NzU5NSwiZXhwIjoxNzI5ODQ5NTk1fQ.2Z4Mi0GAHGfgxklB1a3CNCg-oZUv0XHXgke0U0WWNJs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookingId\": \"66f3e0ac7b87b26247162f69\",\r\n    \"assignedTo\": \"66ef52ea19de3fd874a8b311\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2600/admin/api/assign_booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"admin",
+						"api",
+						"assign_booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "merchant/api/bookingpage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-ACCESS-TOKEN",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWY1MmVhMTlkZTNmZDg3NGE4YjMxMSIsInJvbGUiOiJtZXJjaGFudCIsInVzZXJuYW1lIjoiUmFodWwgUm95IiwiaWF0IjoxNzI3MjU1Mzc2LCJleHAiOjE3Mjk4NDczNzZ9.g-5m3WFZmmmBRXNaS6FDJXpVnrzUyiOBZZrNQ3tzCMY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2600/merchant/api/bookingpage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2600",
+					"path": [
+						"merchant",
+						"api",
+						"bookingpage"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

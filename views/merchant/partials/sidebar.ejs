@@ -1,0 +1,87 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/admin/dashboard" class="brand-link">
+      <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    <!-- Sidebar --> 
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <!-- <div class="image">
+          <img src="" class="img-circle elevation-2" alt="User Image">
+        </div> -->
+   <!-- avatar -->
+    <div>
+      <img src="https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png" class="rounded-circle" style="width: 90px; margin-left: 50px;"
+      alt="Avatar" />
+      
+      
+     <p style="padding-left: 55px; font-weight: 600;font-size: 20px; color:white"> <a href="#" class="d-block"></a>
+      <%= merchant ? merchant.username : 'Guest' %>
+     </p>
+      <a href="/merchant/logout">
+        <button class="btn btn-danger" style="margin-left: 50px;">Log out</button>
+      </a>
+    </div>
+   
+   <!--  -->
+
+       
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+              <!-- Merchant Dashboard Heading -->
+              <li class="nav-header" style="color: #ffc107; padding: 10px 15px; font-size: 1.2em; background-color: #343a40; border-radius: 5px; margin-bottom: 10px;">
+                <i class="nav-icon fas fa-tachometer-alt" style="margin-right: 10px;"></i>
+                Merchant Dashboard
+            </li>
+    
+
+          
+           
+          <li class="nav-item">
+            <a href="/merchant/servicepage" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Service
+               
+              </p>
+            </a>
+          </li>
+
+           
+          <!-- <li class="nav-item">
+            <a href="/merchant/service_detailspage" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+             Service Details
+               
+              </p>
+            </a>
+          </li> -->
+
+          <li class="nav-item">
+            <a href="/merchant/bookingpage" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+             Bookings
+               
+              </p>
+            </a>
+          </li>
+
+        
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

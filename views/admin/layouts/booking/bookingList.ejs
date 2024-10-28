@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+  
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons  -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
+  <style>
+    body {
+      background-color: #f4f6f9;
+    }
+    h1 {
+      color: #007bff;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .table thead th {
+      background-color: #007bff;
+      color: white;
+    }
+    .table {
+      margin-top: 20px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    .table th, .table td {
+      vertical-align: middle;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .btn {
+      min-width: 80px;
+    }
+    select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <%- include('../../partials/navbar') %>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <%- include('../../partials/sidebar') %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <!-- Optional Title -->
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <!-- Optional Breadcrumbs -->
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container">
+        <h1 style="text-decoration:overline">All Bookings</h1>
+        <table class="table table-bordered table-striped" id="bookingsTable">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Service</th>
+              <th scope="col">Date</th>
+              <th scope="col">Message</th>
+              <th scope="col">Location</th>
+              <th scope="col">Assigned</th>
+              <th scope="col">Status</th>
+              <th scope="col">Merchant</th>
+              <th scope="col">Actions</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let count = 0; %>
+            <% bookings.forEach(booking => { %>
+              <tr>
+                <th scope="row"><%= ++count %></th>
+                <td><%=  booking.name%></td>
+                <td><%= booking.phone %></td>
+                <td><%= booking.service.heading %></td>
+                <td><%= new Date(booking.service_date).toDateString() %></td>
+                <td><%= booking.message %></td>
+                <td><%= booking.location %></td>
+                <td><%= booking.assignedTo ? booking.assignedTo.username : 'N/A' %></td>
+                <td><%= booking.status %></td>
+                
+                <td>
+                  <form action="/admin/assign_booking" method="POST">
+                    <input type="hidden" name="bookingId" value="<%= booking._id %>">
+                    <select name="assignedTo" required>
+                      <option value="">Select Merchant</option>
+                      <% merchants.forEach(merchant => { %>
+                        <option value="<%= merchant._id %>"><%= merchant.username %></option>
+                      <% }) %>
+                    </select>
+                    <button type="submit" class="btn btn-success">Assign</button>
+                  </form>
+                </td>
+
+                <td>
+                  <form action="/admin/booking/status/<%= booking._id %>" method="POST">
+                    <select name="status">
+                      <option value="pending" <%= booking.status === 'pending' ? 'selected' : '' %>>Pending</option>
+                      <option value="completed" <%= booking.status === 'completed' ? 'selected' : '' %>>Completed</option>
+                    </select>
+                    <button type="submit" class="btn btn-warning">Update</button>
+                  </form>
+                </td>
+
+                <td>
+                  <a href="/admin/booking/delete/<%= booking._id %>" onclick="return confirm('Are you sure you want to delete this booking?');">
+                    <button class="btn btn-danger">Delete</button>
+                  </a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <%- include('../../partials/footer') %>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/dist/js/adminlte.js"></script>
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#bookingsTable').DataTable({
+        paging: true, 
+        searching: true,
+        ordering: true,
+        info: true
+    });
+});
+</script>
+
+</body>
+</html>
